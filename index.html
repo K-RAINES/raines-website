@@ -117,6 +117,58 @@
             font-size: 1.5em;
             margin: 10px 0 0;
         }
+        .skillthon-feature {
+            display: grid;
+            grid-template-columns: minmax(280px, 440px) 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+        .skillthon-poster {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+            display: block;
+        }
+        .skillthon-kicker {
+            color: #e91e63;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin: 0 0 10px;
+        }
+        .skillthon-copy h2 {
+            font-size: 2.2em;
+            margin-top: 0;
+        }
+        .skillthon-copy p {
+            font-size: 1.15em;
+            line-height: 1.6;
+        }
+        .skillthon-details {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+            display: grid;
+            gap: 12px;
+        }
+        .skillthon-details li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 1.05em;
+        }
+        .skillthon-details i {
+            color: #6A5ACD;
+            width: 22px;
+            margin-top: 3px;
+            text-align: center;
+        }
+        .dark .skillthon-kicker {
+            color: #ff6fa0;
+        }
+        .dark .skillthon-details i {
+            color: #D8BFD8;
+        }
         nav {
             position: fixed;
             top: 0;
@@ -273,6 +325,10 @@
             max-width: 300px;
             height: auto;
             margin: 10px 0;
+        }
+        .event .skillthon-poster {
+            max-width: min(100%, 420px);
+            margin: 0 auto 20px;
         }
         .event a {
             color: #0077b5;
@@ -677,6 +733,13 @@
           .event-main-images .event-image-container {
             max-width: 100%;
           }
+          .skillthon-feature {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+          .skillthon-copy h2 {
+            font-size: 1.8em;
+          }
         }
 
         /* About Us Section */
@@ -1050,7 +1113,7 @@
     </style>
 </head>
 <body>
-    <div class="hero">
+    <div class="hero" id="hero">
         <img src="assets/raines_logo_4.png" alt="RAINES Logo" class="hero-logo">
         <h1>Korean Robotics & AI New England Society (K-RAINES)</h1>
         <p>Innovating the Future in New England<em class="translation"></em></p>
@@ -1071,6 +1134,7 @@
                 <li class="dropdown">
                     <a href="#events" class="dropbtn">Events <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
+                        <a href="#skillthon-2026">Skillthon 2026</a>
                         <a href="#events">Past Events</a>
                         <a href="#upcoming-events">Upcoming Events</a>
                     </div>
@@ -1086,6 +1150,26 @@
             </ul>
             <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
         </nav>
+
+        <section id="skillthon-2026">
+            <div class="skillthon-feature">
+                <a href="assets/skillthon_2026.jpeg" target="_blank" aria-label="Open the K-RAINES Skillthon 2026 poster">
+                    <img src="assets/skillthon_2026.jpeg" alt="K-RAINES Skillthon 2026 event poster" class="skillthon-poster">
+                </a>
+                <div class="skillthon-copy">
+                    <p class="skillthon-kicker">Upcoming Event</p>
+                    <h2>K-RAINES Skillthon 2026</h2>
+                    <p>Build with AI agents, ship ideas fast, and pitch live in one afternoon with Boston-area robotics, AI, and deep tech participants.</p>
+                    <ul class="skillthon-details">
+                        <li><i class="fas fa-calendar-alt"></i><span><strong>Date:</strong> May 21, 2026</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i><span><strong>Location:</strong> CIC Kendall Square, Cambridge, MA</span></li>
+                        <li><i class="fas fa-users"></i><span><strong>Format:</strong> Team formation, agentic AI quick-start, build session, presentations, judging, awards, and networking.</span></li>
+                        <li><i class="fas fa-trophy"></i><span><strong>Tracks:</strong> Physical AI, Healthcare &amp; Biotech, Deep Tech Idea, and Open Track.</span></li>
+                    </ul>
+                    <p>Scan the QR code on the poster to register.</p>
+                </div>
+            </div>
+        </section>
 
         <section id="our-story" class="intro">
             <h2>Our Story</h2>
@@ -1864,11 +1948,17 @@
             <div id="upcoming-events" class="future-events">
                 <h3>Upcoming Events</h3>
                 <div class="event future-event">
-                    <p>Stay tuned for our next exciting events! Follow us on social media or join our mailing list to be the first to know about upcoming seminars, workshops, and networking opportunities.
-                        <em class="translation">다음 흥미진진한 이벤트를 기대해 주세요! 소셜 미디어를 팔로우하거나 메일링 리스트에 가입하여 다가오는 세미나, 워크샵, 네트워킹 기회에 대해 가장 먼저 알아보세요.</em>
+                    <h4>K-RAINES Skillthon 2026<em class="translation">K-RAINES 스킬톤 2026</em></h4>
+                    <a href="assets/skillthon_2026.jpeg" target="_blank" aria-label="Open the K-RAINES Skillthon 2026 poster">
+                        <img src="assets/skillthon_2026.jpeg" alt="K-RAINES Skillthon 2026 event poster" class="skillthon-poster">
+                    </a>
+                    <p>Date: May 21, 2026<br>
+                    Location: CIC Kendall Square, Cambridge, MA<br>
+                    Build with AI agents, ship ideas fast, and pitch live to the Boston-area ecosystem.
+                        <em class="translation">2026년 5월 21일 CIC Kendall Square에서 열리는 K-RAINES Skillthon 2026에서 AI Agent를 활용해 아이디어를 빠르게 만들고 피칭합니다.</em>
                     </p>
                     <div class="join-us-cta">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOBuRAT8xvrYaeE_vkbUU2W0zKPcKxu4MjyCWV4lai9oAGLg/viewform?pli=1" target="_blank" class="contact-button">Join RAINES for Updates</a>
+                        <a href="#skillthon-2026" class="contact-button">View Event Details</a>
                     </div>
                 </div>
             </div>
