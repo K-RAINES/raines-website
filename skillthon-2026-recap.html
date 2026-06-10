@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K-RAINES Skillthon 2026 recap: a hands-on community event where participants used agentic AI to turn ideas into working demos.">
+    <meta property="og:title" content="K-RAINES Skillthon 2026 Recap">
+    <meta property="og:description" content="From ideas to working demos with agentic AI at CIC Kendall Square.">
+    <meta property="og:image" content="assets/event_052126_skillthon/skillthon-2026-collage.jpg">
+    <title>K-RAINES Skillthon 2026 Recap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+            color: #212233;
+            background: #fbfbfe;
+            line-height: 1.65;
+        }
+
+        a {
+            color: #5f47c8;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(106, 90, 205, 0.16);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #27223e;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            background: #050b21;
+            color: white;
+        }
+
+        .hero-image {
+            width: 100%;
+            min-height: 360px;
+            max-height: 720px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .hero-copy {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 46px 22px 56px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.7fr);
+            gap: 36px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            color: #ff4f9a;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin: 0 0 10px;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 6vw, 5.4rem);
+            line-height: 0.98;
+            margin: 0;
+            letter-spacing: 0;
+        }
+
+        .hero-copy p {
+            font-size: 1.18rem;
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.86);
+            margin: 22px 0 0;
+        }
+
+        .fact-box {
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .fact-box dl {
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .fact-box dt {
+            color: rgba(255, 255, 255, 0.62);
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .fact-box dd {
+            margin: 2px 0 0;
+            font-weight: 700;
+        }
+
+        main {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 54px 22px 80px;
+        }
+
+        section {
+            margin: 0 0 64px;
+        }
+
+        h2 {
+            font-size: clamp(1.65rem, 3vw, 2.45rem);
+            line-height: 1.15;
+            margin: 0 0 20px;
+            color: #4f3ab5;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0 0 10px;
+            font-size: 1.18rem;
+            color: #30294f;
+        }
+
+        .lead {
+            font-size: 1.22rem;
+            color: #3c3d4f;
+            max-width: 900px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            border: 1px solid rgba(106, 90, 205, 0.18);
+            border-radius: 8px;
+            padding: 22px;
+            background: white;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 2.2rem;
+            line-height: 1;
+            color: #ff2f87;
+            margin-bottom: 10px;
+        }
+
+        .stat span {
+            font-weight: 700;
+            color: #4c4d62;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+            gap: 34px;
+            align-items: start;
+        }
+
+        .callout {
+            background: #f0edff;
+            border-left: 5px solid #6a5acd;
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .callout p {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .project {
+            background: white;
+            border: 1px solid rgba(106, 90, 205, 0.16);
+            border-radius: 8px;
+            padding: 22px;
+            min-height: 190px;
+        }
+
+        .project .tag {
+            display: inline-block;
+            color: #6a5acd;
+            background: #f1edff;
+            font-weight: 800;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            margin-bottom: 14px;
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        blockquote {
+            margin: 0;
+            background: #111936;
+            color: white;
+            border-radius: 8px;
+            padding: 24px;
+            min-height: 220px;
+        }
+
+        blockquote p {
+            margin: 0;
+            font-size: 1.02rem;
+        }
+
+        blockquote footer {
+            margin-top: 18px;
+            color: #f6a8cd;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .gallery figure {
+            margin: 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(106, 90, 205, 0.14);
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery figcaption {
+            padding: 11px 13px 13px;
+            color: #4f5065;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .partner-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .partner {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(106, 90, 205, 0.16);
+            font-weight: 700;
+        }
+
+        .cta {
+            background: #111936;
+            color: white;
+            border-radius: 8px;
+            padding: 34px;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .button {
+            display: inline-block;
+            white-space: nowrap;
+            background: #ff2f87;
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            padding: 13px 22px;
+            border-radius: 999px;
+        }
+
+        .translation {
+            display: block;
+            margin-top: 10px;
+            color: #5d5e70;
+            font-size: 0.95rem;
+        }
+
+        .site-footer {
+            border-top: 1px solid rgba(106, 90, 205, 0.16);
+            padding: 30px 22px;
+            text-align: center;
+            color: #66697a;
+            background: white;
+        }
+
+        @media (max-width: 860px) {
+            nav {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .hero-copy,
+            .split,
+            .cta {
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+
+            .stats,
+            .project-grid,
+            .quote-grid,
+            .gallery,
+            .partner-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                min-height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">RAINES Home</a>
+        <a href="#overview">Overview</a>
+        <a href="#projects">Projects</a>
+        <a href="#voices">Participant Voices</a>
+        <a href="#photos">Photos</a>
+    </nav>
+
+    <header class="hero">
+        <img class="hero-image" src="assets/event_052126_skillthon/skillthon-2026-collage.jpg" alt="K-RAINES Skillthon 2026 recap collage with photos from presentations, awards, and community moments">
+        <div class="hero-copy">
+            <div>
+                <p class="eyebrow">Event Recap</p>
+                <h1>K-RAINES Skillthon 2026</h1>
+                <p>From ideas to working demos with agentic AI. A hands-on community event where participants used AI agents to turn domain knowledge, rough concepts, and unfinished ideas into live presentations.</p>
+            </div>
+            <aside class="fact-box" aria-label="Event facts">
+                <dl>
+                    <div>
+                        <dt>Date</dt>
+                        <dd>May 21, 2026</dd>
+                    </div>
+                    <div>
+                        <dt>Location</dt>
+                        <dd>CIC Kendall Square, Cambridge, MA</dd>
+                    </div>
+                    <div>
+                        <dt>Format</dt>
+                        <dd>Quick-start, build session, demos, judging, awards, networking</dd>
+                    </div>
+                </dl>
+            </aside>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview">
+            <p class="lead">K-RAINES Skillthon 2026 brought together builders, professionals, students, and community members to test how agentic AI tools can help move an idea into something concrete.</p>
+            <div class="stats">
+                <div class="stat">
+                    <strong>14</strong>
+                    <span>advance registrations</span>
+                </div>
+                <div class="stat">
+                    <strong>7</strong>
+                    <span>final presentations</span>
+                </div>
+                <div class="stat">
+                    <strong>3</strong>
+                    <span>award placements</span>
+                </div>
+                <div class="stat">
+                    <strong>1</strong>
+                    <span>afternoon of building</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="split">
+            <div>
+                <h2>A Different Kind of Hackathon</h2>
+                <p>The event was designed not simply as a technical competition, but as a hands-on space where participants could explore whether Codex-style workflows could turn their own problems and ideas into working prototypes.</p>
+                <p>The final group was smaller and more conversational than a crowded demo day. Presenters had time to explain what they built, answer questions, and share the thinking behind each project.</p>
+                <p>What stood out most was how participants used AI as a collaborator while still talking with others, asking questions, refining ideas, and staying present in the room.</p>
+                <span class="translation">이번 행사는 단순한 코딩 속도 경쟁이 아니라, 각자의 문제의식과 도메인 경험을 AI 에이전트와 함께 실제 데모로 바꿔보는 실전형 커뮤니티 행사였습니다.</span>
+            </div>
+            <aside class="callout">
+                <p>The strongest theme was translation: turning experience, expertise, and curiosity into something others could see, react to, and discuss.</p>
+            </aside>
+        </section>
+
+        <section id="projects">
+            <h2>Projects and Demos</h2>
+            <div class="project-grid">
+                <article class="project">
+                    <span class="tag">1st Place</span>
+                    <h3>Preaching Sermon Creator</h3>
+                    <p>An AI-assisted sermon preparation workflow showing how domain expertise outside traditional software development can become a practical prototype.</p>
+                </article>
+                <article class="project">
+                    <span class="tag">2nd Place</span>
+                    <h3>Researcher Matching</h3>
+                    <p>A matching concept designed to connect researchers, technical experts, and collaborators around high-fit R&amp;D and innovation needs.</p>
+                </article>
+                <article class="project">
+                    <span class="tag">3rd Place</span>
+                    <h3>Your Pet's Second Best Friend</h3>
+                    <p>An AI-powered companion concept for pets, designed to keep them engaged and comforted when their owners are away.</p>
+                </article>
+                <article class="project">
+                    <span class="tag">Prototype</span>
+                    <h3>Hashnews Idea Prototyping</h3>
+                    <p>A rapid app demo exploring how agentic AI can help turn a product idea into something visible and discussable in a short time.</p>
+                </article>
+                <article class="project">
+                    <span class="tag">Prototype</span>
+                    <h3>K-pop 360 Concert Viewer</h3>
+                    <p>An immersive concert-video discovery and viewing concept focused on AI-assisted search and navigation.</p>
+                </article>
+                <article class="project">
+                    <span class="tag">Prototype</span>
+                    <h3>Startup Evaluation Dashboard</h3>
+                    <p>A startup analysis dashboard concept built to compare signals and identify high-potential ventures in a more structured way.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="voices">
+            <h2>Participant Voices</h2>
+            <div class="quote-grid">
+                <blockquote>
+                    <p>"The first hurdle was high, but once I got over it, I could focus on the questions I actually cared about."</p>
+                    <footer>Participant reflection</footer>
+                </blockquote>
+                <blockquote>
+                    <p>"It felt like working with a smart new hire."</p>
+                    <footer>Participant reflection</footer>
+                </blockquote>
+                <blockquote>
+                    <p>"Better prompts and better structure lead to better output."</p>
+                    <footer>Participant reflection</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="photos">
+            <h2>Photo Highlights</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="assets/event_052126_skillthon/audience-venue.jpg" alt="Audience and venue atmosphere at K-RAINES Skillthon 2026">
+                    <figcaption>Audience and venue atmosphere</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/event_052126_skillthon/sermon-presentation.jpg" alt="Skillthon participant presenting a sermon preparation prototype">
+                    <figcaption>Project presentation</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/event_052126_skillthon/community-room.jpg" alt="Participants and organizers gathered during the Skillthon">
+                    <figcaption>Community build session</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/event_052126_skillthon/first-place.jpg" alt="First-place award moment at K-RAINES Skillthon 2026">
+                    <figcaption>Award moment</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/event_052126_skillthon/winners-group.jpg" alt="Top three Skillthon winners holding prize checks">
+                    <figcaption>Top three winners</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/event_052126_skillthon/organizers-winners.jpg" alt="Organizers and winners group photo">
+                    <figcaption>Organizers and winners</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/event_052126_skillthon/agentic-engineering-talk.jpg" alt="Speaker presenting from vibe coding to agentic engineering">
+                    <figcaption>Agentic engineering talk</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Partners and Support</h2>
+            <p>This Skillthon was made possible through community participation, mentoring, event operations support, and partner support for the venue, prizes, AI credits, and event preparation.</p>
+            <div class="partner-list">
+                <div class="partner">Consulate General of the Republic of Korea in Boston</div>
+                <div class="partner">Korea Technology and Information Promotion Agency for SMEs (TIPA)</div>
+                <div class="partner">Korea Evaluation Institute of Industrial Technology (KEIT)</div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div>
+                <h2>What Comes Next</h2>
+                <p>We look forward to building on what we learned and making the next Skillthon broader, deeper, and more practical for the New England robotics, AI, and deep tech community.</p>
+            </div>
+            <a class="button" href="index.html#become-member">Join RAINES</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 RAINES - Robotics &amp; AI New England Society</p>
+    </footer>
+</body>
+</html>
