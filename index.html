@@ -169,6 +169,78 @@
         .dark .skillthon-details i {
             color: #D8BFD8;
         }
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 28px;
+        }
+        .update-card {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid rgba(106, 90, 205, 0.14);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .dark .update-card {
+            background: rgba(0, 0, 0, 0.22);
+            border-color: rgba(216, 191, 216, 0.24);
+        }
+        .update-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(106, 90, 205, 0.2);
+            text-decoration: none;
+        }
+        .update-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            margin: 0;
+            max-width: none;
+        }
+        .update-card-content {
+            padding: 22px;
+        }
+        .update-kicker {
+            color: #e91e63;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            font-size: 0.85em;
+            margin: 0 0 8px;
+        }
+        .dark .update-kicker {
+            color: #ff6fa0;
+        }
+        .update-card h3 {
+            margin: 0 0 12px;
+            color: #333;
+            font-size: 1.35em;
+        }
+        .dark .update-card h3 {
+            color: #e0e0e0;
+        }
+        .update-card p {
+            margin: 0 0 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .dark .update-card p {
+            color: #ccc;
+        }
+        .update-card .read-more {
+            color: #6A5ACD;
+            font-weight: 700;
+        }
+        .dark .update-card .read-more {
+            color: #D8BFD8;
+        }
         nav {
             position: fixed;
             top: 0;
@@ -1130,11 +1202,11 @@
                         <a href="#team">Meet the Team</a>
                     </div>
                 </li>
-                <li><a href="#year-review">2025 Year in Review</a></li>
+                <li><a href="#updates">Stories & Updates</a></li>
                 <li class="dropdown">
                     <a href="#events" class="dropbtn">Events <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="#skillthon-2026">Skillthon 2026</a>
+                        <a href="skillthon-2026-recap.html">Skillthon 2026 Recap</a>
                         <a href="#events">Past Events</a>
                         <a href="#upcoming-events">Upcoming Events</a>
                     </div>
@@ -1153,21 +1225,49 @@
 
         <section id="skillthon-2026">
             <div class="skillthon-feature">
-                <a href="assets/skillthon_2026.jpeg" target="_blank" aria-label="Open the K-RAINES Skillthon 2026 poster">
-                    <img src="assets/skillthon_2026.jpeg" alt="K-RAINES Skillthon 2026 event poster" class="skillthon-poster">
+                <a href="skillthon-2026-recap.html" aria-label="Open the K-RAINES Skillthon 2026 recap">
+                    <img src="assets/event_052126_skillthon/skillthon-2026-collage.jpg" alt="K-RAINES Skillthon 2026 recap collage" class="skillthon-poster">
                 </a>
                 <div class="skillthon-copy">
-                    <p class="skillthon-kicker">Upcoming Event</p>
+                    <p class="skillthon-kicker">Event Recap</p>
                     <h2>K-RAINES Skillthon 2026</h2>
-                    <p>Build with AI agents, ship ideas fast, and pitch live in one afternoon with Boston-area robotics, AI, and deep tech participants.</p>
+                    <p>Participants used agentic AI to turn ideas, domain knowledge, and unfinished concepts into working demos in one afternoon at CIC Kendall Square.</p>
                     <ul class="skillthon-details">
                         <li><i class="fas fa-calendar-alt"></i><span><strong>Date:</strong> May 21, 2026</span></li>
                         <li><i class="fas fa-map-marker-alt"></i><span><strong>Location:</strong> CIC Kendall Square, Cambridge, MA</span></li>
-                        <li><i class="fas fa-users"></i><span><strong>Format:</strong> Team formation, agentic AI quick-start, build session, presentations, judging, awards, and networking.</span></li>
-                        <li><i class="fas fa-trophy"></i><span><strong>Tracks:</strong> Physical AI, Healthcare &amp; Biotech, Deep Tech Idea, and Open Track.</span></li>
+                        <li><i class="fas fa-users"></i><span><strong>Format:</strong> Agentic AI quick-start, build session, presentations, judging, awards, and networking.</span></li>
+                        <li><i class="fas fa-trophy"></i><span><strong>Outcome:</strong> 14 advance registrations, 7 final presentations, and a practical look at how AI agents can support rapid prototyping.</span></li>
                     </ul>
-                    <p>Scan the QR code on the poster to register.</p>
+                    <a href="skillthon-2026-recap.html" class="contact-button">Read the Recap</a>
                 </div>
+            </div>
+        </section>
+
+        <section id="updates">
+            <h2>Stories & Updates</h2>
+            <p class="about-us-details">
+                Longer recaps, annual reviews, and community stories from K-RAINES programs.
+                <em class="translation">K-RAINES 프로그램의 행사 recap, 연간 리뷰, 커뮤니티 스토리를 모아둔 공간입니다.</em>
+            </p>
+            <div class="updates-grid">
+                <a class="update-card" href="skillthon-2026-recap.html">
+                    <img src="assets/event_052126_skillthon/skillthon-2026-collage.jpg" alt="K-RAINES Skillthon 2026 recap collage">
+                    <div class="update-card-content">
+                        <p class="update-kicker">Event Recap</p>
+                        <h3>K-RAINES Skillthon 2026</h3>
+                        <p>Participants used agentic AI to turn ideas and domain knowledge into working demos in one afternoon.</p>
+                        <span class="read-more">Read recap</span>
+                    </div>
+                </a>
+                <a class="update-card" href="#year-review">
+                    <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-0.png" alt="K-RAINES 2025 Year in Review cover slide">
+                    <div class="update-card-content">
+                        <p class="update-kicker">Year Review</p>
+                        <h3>2025 Year in Review</h3>
+                        <p>How K-RAINES grew from launch to a robotics and AI community spanning industry and academia.</p>
+                        <span class="read-more">Read review</span>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -1568,6 +1668,48 @@
             <div id="past-events" class="past-events">
                 <h3>2026 Events</h3>
                 <div class="event">
+                    <h4>SKILLTHON 2026<em class="translation">스킬톤 2026</em></h4>
+                    <p>Date: May 21, 2026 (Thursday)<br>
+                    Location: CIC Kendall Square, Cambridge<br>
+                    Format: Agentic AI build session and live demo presentations</p>
+
+                    <p>
+                        K-RAINES Skillthon 2026 brought together Korean and Korea-connected builders for a hands-on afternoon of agentic AI prototyping. Participants moved from idea framing to working demos, using AI agents to structure product specs, build interfaces, explore domain workflows, and present live projects ranging from ministry tools and pet-care concepts to patent scouting, researcher matching, startup evaluation, and immersive media ideas. The event highlighted a practical lesson for the community: with clear prompts, domain knowledge, and fast iteration, more people can turn real problems into testable prototypes.
+                        <em class="translation">
+                            K-RAINES Skillthon 2026은 한국 및 한국과 연결된 빌더들이 agentic AI로 직접 프로토타입을 만들어본 실습형 행사였습니다. 참가자들은 아이디어를 정리하는 단계에서 시작해 제품 스펙, 인터페이스, 도메인 workflow, 라이브 데모 발표까지 이어갔고, 목회 도구, 반려동물 케어, 특허 탐색, 연구자 매칭, 스타트업 평가, 몰입형 미디어 아이디어 등 다양한 프로젝트를 선보였어요. 이번 행사는 명확한 프롬프트, 도메인 지식, 빠른 반복이 만나면 더 많은 사람이 실제 문제를 테스트 가능한 프로토타입으로 바꿀 수 있다는 점을 보여줬습니다.
+                        </em>
+                    </p>
+
+                    <p><a href="skillthon-2026-recap.html" class="contact-button">Read the full Skillthon recap</a></p>
+
+                    <div class="slideshow-container" data-slideshow="skillthon2026">
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/skillthon-2026-collage.jpg" alt="K-RAINES Skillthon 2026 recap collage">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/photo-review/009-intro-deck-agentic-engineering.jpg" alt="Skillthon 2026 intro deck presentation">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/photo-review/001-tutorial-podium-laptops.jpg" alt="Skillthon 2026 tutorial and setup session">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/photo-review/004-software-demo-presentation.jpg" alt="Skillthon 2026 live software demo presentation">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/photo-review/013-patent-scout-agent-presentation.jpg" alt="Skillthon 2026 Patent Scout Agent presentation">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/photo-review/012-first-place-award.jpg" alt="Skillthon 2026 first place award presentation">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_052126_skillthon/photo-review/018-awards-group-photo.jpg" alt="Skillthon 2026 group photo with award checks">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 'skillthon2026')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'skillthon2026')">&#10095;</a>
+                    </div>
+                </div>
+
+                <div class="event">
                     <h4>2026 Deep Tech Connect<em class="translation">2026 딥테크 커넥트</em></h4>
                     <p>Date: March 9, 2026 (Monday) 5:00 PM - 9:00 PM<br>
                     Location: CIC 5th Floor, Venture Café (1 Broadway, Cambridge)<br>
@@ -1948,17 +2090,12 @@
             <div id="upcoming-events" class="future-events">
                 <h3>Upcoming Events</h3>
                 <div class="event future-event">
-                    <h4>K-RAINES Skillthon 2026<em class="translation">K-RAINES 스킬톤 2026</em></h4>
-                    <a href="assets/skillthon_2026.jpeg" target="_blank" aria-label="Open the K-RAINES Skillthon 2026 poster">
-                        <img src="assets/skillthon_2026.jpeg" alt="K-RAINES Skillthon 2026 event poster" class="skillthon-poster">
-                    </a>
-                    <p>Date: May 21, 2026<br>
-                    Location: CIC Kendall Square, Cambridge, MA<br>
-                    Build with AI agents, ship ideas fast, and pitch live to the Boston-area ecosystem.
-                        <em class="translation">2026년 5월 21일 CIC Kendall Square에서 열리는 K-RAINES Skillthon 2026에서 AI Agent를 활용해 아이디어를 빠르게 만들고 피칭합니다.</em>
+                    <h4>More RAINES events are coming soon<em class="translation">다음 RAINES 행사는 곧 안내될 예정입니다</em></h4>
+                    <p>In the meantime, read the recap from K-RAINES Skillthon 2026, where participants used agentic AI to build and present working demos.
+                        <em class="translation">그동안 K-RAINES Skillthon 2026 recap을 통해 참가자들이 agentic AI로 아이디어를 실제 데모까지 발전시킨 이야기를 확인해보세요.</em>
                     </p>
                     <div class="join-us-cta">
-                        <a href="#skillthon-2026" class="contact-button">View Event Details</a>
+                        <a href="skillthon-2026-recap.html" class="contact-button">Read Skillthon Recap</a>
                     </div>
                 </div>
             </div>
@@ -2007,6 +2144,7 @@
             august: { index: 0, timeout: null },
             november: { index: 0, timeout: null },
             march2026: { index: 0, timeout: null },
+            skillthon2026: { index: 0, timeout: null },
             yearreview: { index: 0, timeout: null }
         };
 
