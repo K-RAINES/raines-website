@@ -25,10 +25,47 @@
 .old-collage-card img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;display:block;border-radius:22px}
 @media(max-width:900px){.hero .stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.hero .stats{grid-template-columns:1fr}}
+/* Deck walkthrough */
+.deck-block{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.95fr);gap:28px;align-items:center;margin:22px auto;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 48px rgba(75,0,130,.08);padding:26px 28px}
+.deck-block.reverse{grid-template-columns:minmax(260px,.95fr) minmax(0,1.15fr)}
+.deck-block.reverse .deck-thumb{order:-1}
+.deck-block.no-thumb{grid-template-columns:1fr}
+.deck-copy h3{margin:.15rem 0 .7rem;color:var(--indigo);letter-spacing:-.03em}
+.deck-copy .tag{margin:0 0 .35rem}
+.deck-copy p{margin:0 0 .7rem;color:#3d4056}
+.deck-copy p:last-child{margin-bottom:0}
+.deck-copy ul{margin:.2rem 0 0;padding:0 0 0 1.15rem;color:#3d4056}
+.deck-copy li{margin:.25rem 0}
+.deck-thumb{margin:0}
+.deck-thumb img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line);box-shadow:0 10px 28px rgba(75,0,130,.10);background:#fff}
+.deck-thumb figcaption{margin:.55rem 2px 0;color:var(--muted);font-size:.86rem}
+@media(max-width:900px){.deck-block,.deck-block.reverse{grid-template-columns:1fr}.deck-block.reverse .deck-thumb{order:0}}
+
+/* Full-event photo gallery */
+.photo-gallery{position:relative;background:#16182a;border-radius:var(--radius);border:1px solid rgba(106,90,205,.22);box-shadow:var(--shadow);overflow:hidden;outline:none}
+.photo-gallery:focus-visible{box-shadow:0 0 0 3px rgba(106,90,205,.45),var(--shadow)}
+.gallery-stage{position:relative;min-height:min(68vw,560px);background:#101222;display:flex;align-items:center;justify-content:center}
+.gallery-slide{display:none;margin:0;width:100%;text-align:center}
+.gallery-slide.is-active{display:block}
+.gallery-slide img{max-width:100%;max-height:min(72vw,640px);width:auto;height:auto;object-fit:contain;vertical-align:middle}
+.gallery-slide figcaption{margin:0;padding:12px 64px 16px;color:#e8e6dc;font-size:.92rem;line-height:1.5}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--indigo);font-size:1.4rem;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.22);z-index:2}
+.gallery-nav:hover{background:#fff}
+.gallery-prev{left:14px}
+.gallery-next{right:14px}
+.gallery-counter{position:absolute;top:14px;right:16px;z-index:2;background:rgba(16,18,34,.72);color:#f4f1e8;font-weight:700;font-size:.88rem;letter-spacing:.04em;padding:.35rem .7rem;border-radius:999px}
+.gallery-thumbs{display:flex;gap:8px;overflow-x:auto;padding:12px 14px 14px;background:#121426;scrollbar-width:thin}
+.gallery-thumbs button{flex:0 0 auto;width:72px;height:54px;padding:0;border:2px solid transparent;border-radius:8px;background:#1c1f33;cursor:pointer;overflow:hidden}
+.gallery-thumbs button img{width:100%;height:100%;object-fit:cover;display:block;opacity:.72}
+.gallery-thumbs button[aria-current="true"]{border-color:#d4b36a}
+.gallery-thumbs button[aria-current="true"] img{opacity:1}
+.gallery-hint{margin:10px 2px 0;color:var(--muted);font-size:.86rem}
+@media(max-width:700px){.gallery-slide figcaption{padding:10px 16px 14px}.gallery-nav{width:40px;height:40px}}
+
 </style>
 </head>
 <body>
-<nav class="topbar" aria-label="Page navigation"><div class="wrap"><div class="brand"><a href="index.html" style="text-decoration:none;color:inherit;">K-RAINES</a></div><div class="navlinks en"><a href="#evening">The evening</a><a href="#talks">Talks</a><a href="#partnership">Partnership</a><a href="#resources">Materials</a></div><div class="navlinks ko"><a href="#evening">행사</a><a href="#talks">강연</a><a href="#partnership">협약</a><a href="#resources">자료</a></div><div class="lang-toggle" aria-label="Language toggle"><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="ko">KR</button></div></div></nav>
+<nav class="topbar" aria-label="Page navigation"><div class="wrap"><div class="brand"><a href="index.html" style="text-decoration:none;color:inherit;">K-RAINES</a></div><div class="navlinks en"><a href="#evening">The evening</a><a href="#program">Program</a><a href="#talks">Talks</a><a href="#partnership">Partnership</a><a href="#gallery">Photos</a><a href="#resources">Materials</a></div><div class="navlinks ko"><a href="#evening">행사</a><a href="#program">프로그램</a><a href="#talks">강연</a><a href="#partnership">협약</a><a href="#gallery">사진</a><a href="#resources">자료</a></div><div class="lang-toggle" aria-label="Language toggle"><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="ko">KR</button></div></div></nav>
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
@@ -53,6 +90,136 @@
 </header>
 
 <main>
+
+<section id="program">
+  <div class="section-head">
+    <h2 class="en">From the event deck</h2>
+    <h2 class="ko">행사 슬라이드로 보는 프로그램</h2>
+    <p class="lead en">The sections below follow the event slide deck: the agenda, a brief introduction to K-RAINES, co-hosts and partners, the visiting delegation’s lab tours, the featured talks, the industry presentations, the four-party memorandum of understanding, and how to stay connected.</p>
+    <p class="lead ko">아래는 행사 슬라이드 덱의 흐름을 따라 정리한 내용입니다. 당일 일정, K-RAINES 소개, 공동 주최와 파트너, 방문단 랩 투어, 초청 강연, 기업 발표, 4자 업무협약, 그리고 이후 연결 방법을 담았습니다.</p>
+  </div>
+
+  <article class="deck-block">
+    <div class="deck-copy">
+      <p class="tag en">02 · Agenda</p>
+      <p class="tag ko">02 · 당일 일정</p>
+      <h3 class="en">Seven moments, one evening</h3>
+      <h3 class="ko">하나의 저녁, 일곱 개의 순서</h3>
+      <p class="en">The deck framed the program, from 5:30 to 9:00 p.m. ET, in seven parts: welcome remarks by Andy Park, President of K-RAINES; co-host remarks from TIPA (이훈배 소장); greetings from 중소벤처기업부 and DMI; featured talks by 박경근 (MOVIN Inc.) and 이동찬 (Boston Dynamics); industry presentations from DMI and 대경권 robotics companies; the memorandum of understanding signed by K-RAINES, REPA, DMI, and GRC; and a networking reception and dinner.</p>
+      <p class="ko">슬라이드는 오후 5:30–9:00(동부시간)의 프로그램을 일곱 순서로 정리했습니다. K-RAINES Andy Park 회장의 환영 인사, TIPA 이훈배 소장의 공동 주최 인사, 중소벤처기업부와 DMI의 인사, 박경근(MOVIN Inc.)과 이동찬(Boston Dynamics)의 초청 강연, DMI와 대경권 로봇 기업의 발표, K-RAINES·REPA·DMI·GRC 업무협약 체결, 그리고 네트워킹 리셉션과 만찬입니다.</p>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-02.jpg" alt="Tonight's agenda slide from the event deck"><figcaption><span class="en">Slide 2 of 19: tonight’s agenda.</span><span class="ko">19장 중 2장: 당일 일정.</span></figcaption></figure>
+  </article>
+
+  <article class="deck-block reverse">
+    <div class="deck-copy">
+      <p class="tag en">03–10 · K-RAINES</p>
+      <p class="tag ko">03–10 · K-RAINES 소개</p>
+      <h3 class="en">A community, and a question for the year</h3>
+      <h3 class="ko">커뮤니티, 그리고 올해의 질문</h3>
+      <p class="en">K-RAINES is a community of Korean and New England researchers, builders, and industry leaders, founded in April 2025 for Korean professionals working and researching in robotics and AI across New England. Its activities include research seminars, career seminars, and networking. Members work in industry and academia, including research and engineering as well as product management, hardware design, UI/UX, and AI ethics.</p>
+      <p class="ko">K-RAINES는 뉴잉글랜드에서 로보틱스와 AI를 연구하고 일하는 한국 전문가를 위해 2025년 4월 설립된, 한국과 뉴잉글랜드의 연구자·실무자·산업 리더 커뮤니티입니다. 연구 세미나, 커리어 세미나, 네트워킹을 이어 오고 있으며, 회원은 산업과 학계에 걸쳐 연구·엔지니어링뿐 아니라 제품 관리, 하드웨어 설계, UI/UX, AI 윤리 등 다양한 분야에서 활동합니다.</p>
+      <p class="en">The welcome slides asked how AI can help more people turn expertise into real-world impact, and described the evening as the next step — from models to machines — with co-hosts and partners from Korea. The community slide reported 118 unique members (membership sheet, November 12, 2026) and 55 / 43 industry / academia as of December 2025. The 2026 review marked three earlier gatherings: 2026 Deep Tech Connect in March, hosted with the Consulate General and TIPA at CIC Venture Café in Cambridge, with a keynote by Prof. Philip Kim of Harvard; Skillthon 2026 on May 21 at CIC Kendall Square, with 14 builders and 7 live demos; and From Prompt to Practice on September 17, with a keynote by Prof. Taskin Padir and four member lightning talks, and 29 attendees.</p>
+      <p class="ko">환영 슬라이드는 “AI가 더 많은 사람이 전문성을 현실의 임팩트로 바꾸는 데 어떻게 도움이 될 수 있는가”를 올해의 질문으로 제시하고, 이번 저녁을 한국 공동 주최·파트너와 함께 모델에서 머신으로 나아가는 다음 단계로 소개했습니다. 커뮤니티 슬라이드는 고유 회원 118명(회원 명단, 2026년 11월 12일 기준)과 2025년 12월 기준 산업 55명·학계 43명을 표기했습니다. 2026년 리뷰에는 세 차례의 앞선 모임이 담겼습니다. 3월 2026 Deep Tech Connect(주보스턴 대한민국 총영사관·TIPA 주최, CIC Venture Café 케임브리지, Harvard 김필립 교수 기조강연), 5월 21일 Skillthon 2026(CIC Kendall Square, 14명의 참가자와 7개의 라이브 데모), 그리고 9월 17일 From Prompt to Practice(Taskin Padir 교수 기조강연과 회원 라이트닝 토크 4편, 29명 참석)입니다.</p>
+      <p class="en">The November 17 theme asked what becomes possible when AI can better understand, predict, and act in the physical world, organized around five stages: perception, planning, action, validation, and safety.</p>
+      <p class="ko">11월 17일의 주제는 AI가 물리 세계를 더 잘 이해하고, 예측하고, 행동할 때 어떤 가능성이 열리는지이며, perception, planning, action, validation, safety의 다섯 단계로 정리되었습니다.</p>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-06.jpg" alt="About K-RAINES slide from the event deck"><figcaption><span class="en">Slide 6 of 19: about K-RAINES. Community and 2026 review followed on slides 7–8; the evening’s theme is on slide 10.</span><span class="ko">19장 중 6장: K-RAINES 소개. 커뮤니티와 2026 리뷰는 7–8장, 그날의 주제는 10장입니다.</span></figcaption></figure>
+  </article>
+
+  <article class="deck-block">
+    <div class="deck-copy">
+      <p class="tag en">04, 05, 11 · Co-hosts and partners</p>
+      <p class="tag ko">04, 05, 11 · 공동 주최와 파트너</p>
+      <h3 class="en">Building this evening together</h3>
+      <h3 class="ko">함께 만든 저녁</h3>
+      <p class="en">Co-host remarks were given by 이훈배 소장 of TIPA (Korea Technology and Information Promotion Agency for SMEs). The deck notes that KEIT remained a co-host but did not give remarks. Greetings followed from 김형균 사무관, 중소벤처기업부 (Ministry of SMEs and Startups), and 박기진 본부장, Daegu Mechatronics &amp; Materials Institute (DMI). 조남규 과학기술관 attended on behalf of the Consulate General of the Republic of Korea in Boston.</p>
+      <p class="ko">공동 주최 인사는 중소기업기술정보진흥원(TIPA) 이훈배 소장이 진행했습니다. 슬라이드는 KEIT가 공동 주최로 함께하되 별도 인사는 하지 않는다고 적고 있습니다. 이어 중소벤처기업부 김형균 사무관과 대구기계부품연구원(DMI) 박기진 본부장의 인사가 있었으며, 주보스턴 대한민국 총영사관을 대표해 조남규 과학기술관이 참석했습니다.</p>
+      <p class="en">The partners slide listed co-hosts REPA, TIPA, and KEIT; MOU partners DMI and GRC, with REPA also an MOU partner; venue host Morgan, Lewis &amp; Bockius LLP; and support from the Consulate General of the Republic of Korea in Boston.</p>
+      <p class="ko">파트너 슬라이드에는 공동 주최 REPA, TIPA, KEIT, MOU 파트너 DMI와 GRC(REPA 또한 MOU 파트너), 행사장 호스트 Morgan, Lewis &amp; Bockius LLP, 그리고 주보스턴 대한민국 총영사관의 지원이 정리되어 있습니다.</p>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-11.jpg" alt="Partners slide listing co-hosts, MOU partners, and the venue host"><figcaption><span class="en">Slide 11 of 19: partners for the evening. Co-host remarks and greetings appear on slides 4 and 5.</span><span class="ko">19장 중 11장: 그날의 파트너. 공동 주최 인사와 환영 인사는 4장과 5장입니다.</span></figcaption></figure>
+  </article>
+
+  <article class="deck-block no-thumb">
+    <div class="deck-copy">
+      <p class="tag en">12 · Delegation tours, November 16–17</p>
+      <p class="tag ko">12 · 방문단 투어, 11월 16–17일</p>
+      <h3 class="en">Company and lab visits around Boston</h3>
+      <h3 class="ko">보스턴 일대의 기업·랩 방문</h3>
+      <p class="en">The deck recorded company and lab tours by the visiting REPA delegation on November 16–17: RAI Institute (Robotics &amp; AI Institute), hosted by 이태윤 (Taeyoon Lee) on Monday, November 16; Prof. 김상배 (Sangbae Kim) Lab at MIT, hosted by 이호재 that afternoon; Pulkit Lab and Daniella Lab at MIT and MIT CSAIL, hosted by 박영효 and 김규범; and Pickle Robot, hosted by 김충희 (Frank Kim) on Tuesday, November 17. The slide thanks 강지민 (Jimin Kang), K-RAINES Vice President, for coordinating the lab tours, and every host who welcomed the delegation.</p>
+      <p class="ko">슬라이드는 11월 16–17일 REPA 방문단의 기업·랩 투어를 기록하고 있습니다. 16일(월) RAI Institute(Robotics &amp; AI Institute, 호스트 이태윤), 같은 날 오후 MIT 김상배 교수 연구실(호스트 이호재), MIT 및 MIT CSAIL의 Pulkit Lab과 Daniella Lab(호스트 박영효, 김규범), 그리고 17일(화) Pickle Robot(호스트 김충희, Frank Kim)입니다. 슬라이드는 랩 투어를 조율한 K-RAINES 강지민 부회장과, 방문단을 맞아주신 모든 호스트에게 감사를 전합니다.</p>
+      <p class="en">Photographs from the MIT and Pickle Robot visits are not shown here, pending confirmation from the hosts that they may be shared. RAI Institute photographs are not included.</p>
+      <p class="ko">MIT와 Pickle Robot 방문 사진은 호스트 기관의 공개 확인이 끝날 때까지 이 페이지에 올리지 않습니다. RAI Institute 사진은 포함하지 않습니다.</p>
+    </div>
+  </article>
+
+  <article class="deck-block">
+    <div class="deck-copy">
+      <p class="tag en">13–14 · Featured talks</p>
+      <p class="tag ko">13–14 · 초청 강연</p>
+      <h3 class="en">Two talks on physical AI</h3>
+      <h3 class="ko">피지컬 AI를 주제로 한 두 강연</h3>
+      <p class="en">박경근 (Kyung Keun Park), Head of US Business at MOVIN Inc., spoke on <em>Scaling Human Motion Data for Physical AI: Making 3D Motion Capture Accessible Anytime, Anywhere</em>, including a live product demonstration.</p>
+      <p class="ko">MOVIN Inc. 미국 사업 총괄 박경근(Kyung Keun Park)은 <em>Scaling Human Motion Data for Physical AI: Making 3D Motion Capture Accessible Anytime, Anywhere</em>를 주제로 강연했으며, 라이브 제품 시연이 함께 진행되었습니다.</p>
+      <p class="en">이동찬 (Dongchan Lee), Research Engineer on the Atlas team at Boston Dynamics, spoke on <em>Trends in Physical AI: A Practitioner’s Perspective</em>, on how robotics companies think about VLA, WAM, RL, and Sim2Real.</p>
+      <p class="ko">Boston Dynamics Atlas 팀 리서치 엔지니어 이동찬(Dongchan Lee)은 <em>Trends in Physical AI: A Practitioner’s Perspective</em>를 주제로, 로봇 기업이 VLA, WAM, RL, Sim2Real을 어떻게 바라보는지를 이야기했습니다.</p>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-13.jpg" alt="Featured talk slide for 박경근 of MOVIN Inc."><figcaption><span class="en">Slide 13 of 19: the MOVIN Inc. featured talk. Slide 14 introduces the Boston Dynamics talk.</span><span class="ko">19장 중 13장: MOVIN Inc. 초청 강연. 14장은 Boston Dynamics 강연 소개입니다.</span></figcaption></figure>
+  </article>
+
+  <article class="deck-block reverse">
+    <div class="deck-copy">
+      <p class="tag en">15 · Industry presentations</p>
+      <p class="tag ko">15 · 기업 발표</p>
+      <h3 class="en">DMI and visiting companies</h3>
+      <h3 class="ko">DMI와 방문 기업</h3>
+      <p class="en">The deck listed short presentations, about one hour in total, from DMI (대구기계부품연구원) and five companies traveling with the REPA delegation. The talks themselves, as photographed during the program, included:</p>
+      <p class="ko">슬라이드는 DMI(대구기계부품연구원)와 REPA 방문단의 다섯 기업이 약 한 시간에 걸쳐 짧은 발표를 진행한다고 소개했습니다. 현장에서 촬영된 발표 자료에 따르면, 각 발표의 내용은 다음과 같습니다.</p>
+      <ul class="en">
+        <li>DMI — an introduction from 대구기계부품연구원, as listed in the event deck.</li>
+        <li>레시피랩 (RecipeLab) — a dual-arm collaborative mobile robot designed to work alongside people, including on an autonomous mobile platform for repetitive work in manufacturing and logistics.</li>
+        <li>아이솔 (I-Sol) — a company introduction, including the AI care robot 호리 (HoRi).</li>
+        <li>아이엠로보틱스 (IM Robotics) — robot solutions including autonomous mobile robots, industrial robots, and smart-farm applications.</li>
+        <li>지오로봇 (Zio Robot) — a presentation on user-centered production systems and autonomous mobile robots.</li>
+        <li>차로보틱스 (Cha Robotics) — an AI robot automation solution for on-site vertical work.</li>
+      </ul>
+      <ul class="ko">
+        <li>DMI — 행사 슬라이드에 소개된 대구기계부품연구원의 기관 소개.</li>
+        <li>레시피랩 (RecipeLab) — 사람 곁에서 일하는 양팔 협동 이동로봇. 제조·물류 현장의 반복 작업을 위한 자율주행 이동 플랫폼을 포함합니다.</li>
+        <li>아이솔 (I-Sol) — 회사 소개와 AI 돌봄 로봇 호리(HoRi).</li>
+        <li>아이엠로보틱스 (IM Robotics) — 자율주행 로봇, 산업용 로봇, 스마트팜 응용을 포함한 로봇 솔루션.</li>
+        <li>지오로봇 (Zio Robot) — 사용자 중심의 생산 시스템과 자율 이동로봇에 관한 발표.</li>
+        <li>차로보틱스 (Cha Robotics) — 현장의 수직 작업을 위한 AI 로봇 자동화 솔루션.</li>
+      </ul>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-15.jpg" alt="Industry presentations slide listing DMI and five visiting companies"><figcaption><span class="en">Slide 15 of 19: DMI and the five visiting companies.</span><span class="ko">19장 중 15장: DMI와 방문 5개 기업.</span></figcaption></figure>
+  </article>
+
+  <article class="deck-block">
+    <div class="deck-copy">
+      <p class="tag en">16–17 · Memorandum of understanding</p>
+      <p class="tag ko">16–17 · 업무협약</p>
+      <h3 class="en">A four-party partnership</h3>
+      <h3 class="ko">4자 업무협약</h3>
+      <p class="en">K-RAINES, REPA (Robot Enterprise Promotion Association), DMI (대구기계부품연구원), and GRC (Global Robot Cluster) signed a four-party memorandum of understanding. The deck describes its purpose as connecting Korean robotics companies and research institutions with the Boston robotics and AI community. Signers on site, as listed in the deck, were 박형주 (K-RAINES), 신재욱 본부장 (REPA), 박기진 본부장 (DMI), and 배요한 책임 (GRC). The heads of REPA, DMI, and GRC had pre-signed the agreement.</p>
+      <p class="ko">K-RAINES, REPA(대경로봇기업진흥협회), DMI(대구기계부품연구원), GRC(글로벌로봇클러스터)는 4자 업무협약(MOU)을 체결했습니다. 슬라이드는 협약의 취지를 한국의 로봇 기업·연구기관과 보스턴의 로보틱스·AI 커뮤니티를 연결하는 것으로 설명합니다. 슬라이드에 적힌 현장 서명자는 박형주(K-RAINES), 신재욱 본부장(REPA), 박기진 본부장(DMI), 배요한 책임(GRC)이며, REPA·DMI·GRC 기관장은 사전에 서명했습니다.</p>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-17.jpg" alt="Four-party memorandum of understanding slide"><figcaption><span class="en">Slide 17 of 19: the four-party partnership.</span><span class="ko">19장 중 17장: 4자 업무협약.</span></figcaption></figure>
+  </article>
+
+  <article class="deck-block reverse">
+    <div class="deck-copy">
+      <p class="tag en">18–19 · Next steps</p>
+      <p class="tag ko">18–19 · 다음 연결</p>
+      <h3 class="en">Stay connected</h3>
+      <h3 class="ko">함께 이어가기</h3>
+      <p class="en">The closing slides invited guests to stay with the K-RAINES community at rainesusa.org, to follow K-RAINES on LinkedIn, and to write to ask.raines@gmail.com. A networking reception followed the formal program.</p>
+      <p class="ko">마지막 슬라이드는 rainesusa.org에서 K-RAINES 커뮤니티와 함께하고, LinkedIn에서 K-RAINES를 팔로우하며, ask.raines@gmail.com으로 연락해 달라고 안내했습니다. 공식 일정 이후에는 네트워킹 리셉션이 이어졌습니다.</p>
+    </div>
+    <figure class="deck-thumb"><img src="assets/event_111726_forum/slides/slide-18.jpg" alt="Stay connected slide with the K-RAINES website and LinkedIn"><figcaption><span class="en">Slide 18 of 19: stay connected. Slide 19 closed the deck with thanks.</span><span class="ko">19장 중 18장: 커뮤니티와 연결하기. 19장은 감사의 인사로 덱을 마무리합니다.</span></figcaption></figure>
+  </article>
+</section>
 
 <section id="evening">
   <div class="section-head">
@@ -137,6 +304,317 @@
   <div class="old-collage-card" style="margin:18px auto;width:min(980px,100%)">
     <figure><img src="assets/event_111726_forum/05_mou_and_group.jpg" alt="Four-party MOU signing and group photo"><figcaption><span class="en">The signing, and the group photograph that closed the formal program.</span><span class="ko">협약 체결과, 공식 일정을 마무리하며 함께 찍은 단체 사진.</span></figcaption></figure>
   </div>
+</section>
+
+
+<section id="gallery">
+  <div class="section-head">
+    <h2 class="en">Photographs from the evening</h2>
+    <h2 class="ko">그날의 사진</h2>
+    <p class="lead en">A chronological gallery of 58 photographs from the November 17 program at Morgan Lewis, from arrivals through the talks, industry presentations, the signing, and the group photograph. Use the arrows, keys, or swipe to move through the set.</p>
+    <p class="lead ko">11월 17일 Morgan Lewis에서 열린 프로그램의 사진 58장입니다. 입장부터 강연, 기업 발표, 협약 체결, 단체 사진까지 시간 순으로 정리했습니다. 화살표, 키보드, 또는 스와이프로 넘길 수 있습니다.</p>
+  </div>
+  <div class="photo-gallery" id="photo-gallery" tabindex="0" aria-roledescription="carousel" aria-label="Event photograph gallery">
+    <div class="gallery-counter" aria-live="polite"><span id="gallery-pos">1</span> / 58</div>
+    <button type="button" class="gallery-nav gallery-prev" data-dir="-1" aria-label="Previous photograph">&#10094;</button>
+    <button type="button" class="gallery-nav gallery-next" data-dir="1" aria-label="Next photograph">&#10095;</button>
+    <div class="gallery-stage" id="gallery-stage">
+    <figure class="gallery-slide is-active" data-index="1">
+      <img src="assets/event_111726_forum/gallery/photo_001.jpg" alt="The room at Morgan Lewis as the evening begins." loading="eager" width="1600" height="1200">
+      <figcaption><span class="en">The room at Morgan Lewis as the evening begins.</span><span class="ko">행사가 시작되는 Morgan Lewis 행사장.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="2">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_002.jpg" alt="The room at Morgan Lewis as the evening begins." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The room at Morgan Lewis as the evening begins.</span><span class="ko">행사가 시작되는 Morgan Lewis 행사장.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="3">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_003.jpg" alt="The room at Morgan Lewis as the evening begins." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The room at Morgan Lewis as the evening begins.</span><span class="ko">행사가 시작되는 Morgan Lewis 행사장.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="4">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_004.jpg" alt="The reception table as guests arrive." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The reception table as guests arrive.</span><span class="ko">참석자들이 도착하며 리셉션 테이블이 준비된 모습.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="5">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_005.jpg" alt="Conversation in the atrium before the formal program." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Conversation in the atrium before the formal program.</span><span class="ko">공식 프로그램에 앞서 아트리움에서 나누는 대화.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="6">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_006.jpg" alt="Conversation in the atrium before the formal program." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Conversation in the atrium before the formal program.</span><span class="ko">공식 프로그램에 앞서 아트리움에서 나누는 대화.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="7">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_007.jpg" alt="Conversation in the atrium before the formal program." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Conversation in the atrium before the formal program.</span><span class="ko">공식 프로그램에 앞서 아트리움에서 나누는 대화.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="8">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_008.jpg" alt="Conversation in the atrium before the formal program." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Conversation in the atrium before the formal program.</span><span class="ko">공식 프로그램에 앞서 아트리움에서 나누는 대화.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="9">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_009.jpg" alt="Co-host remarks from TIPA." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Co-host remarks from TIPA.</span><span class="ko">TIPA 공동 주최 인사.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="10">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_010.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="11">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_011.jpg" alt="A motion-capture demonstration set up beside the room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">A motion-capture demonstration set up beside the room.</span><span class="ko">행사장 옆에 준비된 모션 캡처 시연 장비.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="12">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_012.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="13">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_013.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="14">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_014.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="15">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_015.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="16">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_016.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="17">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_017.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="18">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_018.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="19">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_019.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="20">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_020.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="21">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_023.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="22">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_024.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="23">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_025.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="24">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_026.jpg" alt="박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">박경근 (MOVIN Inc.) during the featured talk, including a live product demonstration.</span><span class="ko">초청 강연 중인 박경근(MOVIN Inc.). 라이브 제품 시연이 포함되었습니다.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="25">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_028.jpg" alt="A moment of conversation in the audience." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">A moment of conversation in the audience.</span><span class="ko">객석에서 이어진 대화.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="26">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_029.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="27">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_030.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="28">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_031.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="29">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_032.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="30">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_033.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="31">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_034.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="32">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_035.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="33">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_036.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="34">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_037.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="35">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_038.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="36">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_039.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="37">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_040.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="38">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_041.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="39">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_042.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="40">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_043.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="41">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_044.jpg" alt="이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">이동찬 (Boston Dynamics) on Trends in Physical AI: A Practitioner's Perspective.</span><span class="ko">이동찬(Boston Dynamics)의 강연, Trends in Physical AI: A Practitioner's Perspective.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="42">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_045.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="43">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_046.jpg" alt="Industry presentations from the visiting delegation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Industry presentations from the visiting delegation.</span><span class="ko">방문단 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="44">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_047.jpg" alt="레시피랩 (RecipeLab) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">레시피랩 (RecipeLab) industry presentation.</span><span class="ko">레시피랩(RecipeLab) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="45">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_048.jpg" alt="레시피랩 (RecipeLab) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">레시피랩 (RecipeLab) industry presentation.</span><span class="ko">레시피랩(RecipeLab) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="46">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_049.jpg" alt="Guests take their seats in the presentation room." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">Guests take their seats in the presentation room.</span><span class="ko">발표장에 착석한 참석자들.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="47">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_050.jpg" alt="레시피랩 (RecipeLab) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">레시피랩 (RecipeLab) industry presentation.</span><span class="ko">레시피랩(RecipeLab) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="48">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_051.jpg" alt="아이엠로보틱스 (IM Robotics) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">아이엠로보틱스 (IM Robotics) industry presentation.</span><span class="ko">아이엠로보틱스(IM Robotics) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="49">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_053.jpg" alt="아이엠로보틱스 (IM Robotics) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">아이엠로보틱스 (IM Robotics) industry presentation.</span><span class="ko">아이엠로보틱스(IM Robotics) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="50">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_054.jpg" alt="아이엠로보틱스 (IM Robotics) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">아이엠로보틱스 (IM Robotics) industry presentation.</span><span class="ko">아이엠로보틱스(IM Robotics) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="51">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_055.jpg" alt="지오로봇 (Zio Robot) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">지오로봇 (Zio Robot) industry presentation.</span><span class="ko">지오로봇(Zio Robot) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="52">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_057.jpg" alt="지오로봇 (Zio Robot) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">지오로봇 (Zio Robot) industry presentation.</span><span class="ko">지오로봇(Zio Robot) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="53">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_058.jpg" alt="차로보틱스 (Cha Robotics) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">차로보틱스 (Cha Robotics) industry presentation.</span><span class="ko">차로보틱스(Cha Robotics) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="54">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_059.jpg" alt="아이솔 (I-Sol) industry presentation." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">아이솔 (I-Sol) industry presentation.</span><span class="ko">아이솔(I-Sol) 기업 발표.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="55">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_060.jpg" alt="The four-party MOU signing by K-RAINES, REPA, DMI, and GRC." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The four-party MOU signing by K-RAINES, REPA, DMI, and GRC.</span><span class="ko">K-RAINES, REPA, DMI, GRC 4자 업무협약(MOU) 체결.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="56">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_061.jpg" alt="The four-party MOU signing by K-RAINES, REPA, DMI, and GRC." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The four-party MOU signing by K-RAINES, REPA, DMI, and GRC.</span><span class="ko">K-RAINES, REPA, DMI, GRC 4자 업무협약(MOU) 체결.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="57">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_062.jpg" alt="The group photograph at the close of the formal program." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The group photograph at the close of the formal program.</span><span class="ko">공식 일정을 마무리하며 함께 찍은 단체 사진.</span></figcaption>
+    </figure>
+    <figure class="gallery-slide" data-index="58">
+      <img src="" data-src="assets/event_111726_forum/gallery/photo_063.jpg" alt="The group photograph at the close of the formal program." loading="lazy" width="1600" height="1200">
+      <figcaption><span class="en">The group photograph at the close of the formal program.</span><span class="ko">공식 일정을 마무리하며 함께 찍은 단체 사진.</span></figcaption>
+    </figure>
+    </div>
+    <div class="gallery-thumbs" id="gallery-thumbs">
+    <button type="button" data-goto="1" aria-current="true" aria-label="Photo 1 of 58"><img src="assets/event_111726_forum/gallery/photo_001.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="2" aria-label="Photo 2 of 58"><img src="assets/event_111726_forum/gallery/photo_002.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="3" aria-label="Photo 3 of 58"><img src="assets/event_111726_forum/gallery/photo_003.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="4" aria-label="Photo 4 of 58"><img src="assets/event_111726_forum/gallery/photo_004.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="5" aria-label="Photo 5 of 58"><img src="assets/event_111726_forum/gallery/photo_005.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="6" aria-label="Photo 6 of 58"><img src="assets/event_111726_forum/gallery/photo_006.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="7" aria-label="Photo 7 of 58"><img src="assets/event_111726_forum/gallery/photo_007.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="8" aria-label="Photo 8 of 58"><img src="assets/event_111726_forum/gallery/photo_008.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="9" aria-label="Photo 9 of 58"><img src="assets/event_111726_forum/gallery/photo_009.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="10" aria-label="Photo 10 of 58"><img src="assets/event_111726_forum/gallery/photo_010.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="11" aria-label="Photo 11 of 58"><img src="assets/event_111726_forum/gallery/photo_011.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="12" aria-label="Photo 12 of 58"><img src="assets/event_111726_forum/gallery/photo_012.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="13" aria-label="Photo 13 of 58"><img src="assets/event_111726_forum/gallery/photo_013.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="14" aria-label="Photo 14 of 58"><img src="assets/event_111726_forum/gallery/photo_014.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="15" aria-label="Photo 15 of 58"><img src="assets/event_111726_forum/gallery/photo_015.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="16" aria-label="Photo 16 of 58"><img src="assets/event_111726_forum/gallery/photo_016.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="17" aria-label="Photo 17 of 58"><img src="assets/event_111726_forum/gallery/photo_017.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="18" aria-label="Photo 18 of 58"><img src="assets/event_111726_forum/gallery/photo_018.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="19" aria-label="Photo 19 of 58"><img src="assets/event_111726_forum/gallery/photo_019.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="20" aria-label="Photo 20 of 58"><img src="assets/event_111726_forum/gallery/photo_020.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="21" aria-label="Photo 21 of 58"><img src="assets/event_111726_forum/gallery/photo_023.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="22" aria-label="Photo 22 of 58"><img src="assets/event_111726_forum/gallery/photo_024.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="23" aria-label="Photo 23 of 58"><img src="assets/event_111726_forum/gallery/photo_025.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="24" aria-label="Photo 24 of 58"><img src="assets/event_111726_forum/gallery/photo_026.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="25" aria-label="Photo 25 of 58"><img src="assets/event_111726_forum/gallery/photo_028.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="26" aria-label="Photo 26 of 58"><img src="assets/event_111726_forum/gallery/photo_029.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="27" aria-label="Photo 27 of 58"><img src="assets/event_111726_forum/gallery/photo_030.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="28" aria-label="Photo 28 of 58"><img src="assets/event_111726_forum/gallery/photo_031.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="29" aria-label="Photo 29 of 58"><img src="assets/event_111726_forum/gallery/photo_032.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="30" aria-label="Photo 30 of 58"><img src="assets/event_111726_forum/gallery/photo_033.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="31" aria-label="Photo 31 of 58"><img src="assets/event_111726_forum/gallery/photo_034.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="32" aria-label="Photo 32 of 58"><img src="assets/event_111726_forum/gallery/photo_035.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="33" aria-label="Photo 33 of 58"><img src="assets/event_111726_forum/gallery/photo_036.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="34" aria-label="Photo 34 of 58"><img src="assets/event_111726_forum/gallery/photo_037.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="35" aria-label="Photo 35 of 58"><img src="assets/event_111726_forum/gallery/photo_038.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="36" aria-label="Photo 36 of 58"><img src="assets/event_111726_forum/gallery/photo_039.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="37" aria-label="Photo 37 of 58"><img src="assets/event_111726_forum/gallery/photo_040.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="38" aria-label="Photo 38 of 58"><img src="assets/event_111726_forum/gallery/photo_041.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="39" aria-label="Photo 39 of 58"><img src="assets/event_111726_forum/gallery/photo_042.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="40" aria-label="Photo 40 of 58"><img src="assets/event_111726_forum/gallery/photo_043.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="41" aria-label="Photo 41 of 58"><img src="assets/event_111726_forum/gallery/photo_044.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="42" aria-label="Photo 42 of 58"><img src="assets/event_111726_forum/gallery/photo_045.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="43" aria-label="Photo 43 of 58"><img src="assets/event_111726_forum/gallery/photo_046.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="44" aria-label="Photo 44 of 58"><img src="assets/event_111726_forum/gallery/photo_047.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="45" aria-label="Photo 45 of 58"><img src="assets/event_111726_forum/gallery/photo_048.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="46" aria-label="Photo 46 of 58"><img src="assets/event_111726_forum/gallery/photo_049.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="47" aria-label="Photo 47 of 58"><img src="assets/event_111726_forum/gallery/photo_050.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="48" aria-label="Photo 48 of 58"><img src="assets/event_111726_forum/gallery/photo_051.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="49" aria-label="Photo 49 of 58"><img src="assets/event_111726_forum/gallery/photo_053.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="50" aria-label="Photo 50 of 58"><img src="assets/event_111726_forum/gallery/photo_054.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="51" aria-label="Photo 51 of 58"><img src="assets/event_111726_forum/gallery/photo_055.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="52" aria-label="Photo 52 of 58"><img src="assets/event_111726_forum/gallery/photo_057.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="53" aria-label="Photo 53 of 58"><img src="assets/event_111726_forum/gallery/photo_058.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="54" aria-label="Photo 54 of 58"><img src="assets/event_111726_forum/gallery/photo_059.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="55" aria-label="Photo 55 of 58"><img src="assets/event_111726_forum/gallery/photo_060.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="56" aria-label="Photo 56 of 58"><img src="assets/event_111726_forum/gallery/photo_061.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="57" aria-label="Photo 57 of 58"><img src="assets/event_111726_forum/gallery/photo_062.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    <button type="button" data-goto="58" aria-label="Photo 58 of 58"><img src="assets/event_111726_forum/gallery/photo_063.jpg" alt="" loading="lazy" width="72" height="54"></button>
+    </div>
+  </div>
+  <p class="gallery-hint en">Arrow keys and swipe also move between photographs. Tour photographs from MIT and Pickle Robot are not included, pending host approval. RAI Institute photographs are not included.</p>
+  <p class="gallery-hint ko">키보드 화살표와 스와이프로도 사진을 넘길 수 있습니다. MIT와 Pickle Robot 투어 사진은 호스트 확인 후 추가할 예정이며, RAI Institute 사진은 포함하지 않습니다.</p>
 </section>
 
 <section id="resources">
@@ -225,5 +703,70 @@
 </main>
 <footer class="site"><div class="wrap"><p><a href="index.html">K-RAINES</a> · Korean Robotics &amp; AI New England Society · <a href="mailto:ask.raines@gmail.com">ask.raines@gmail.com</a></p></div></footer>
 <script>const buttons=document.querySelectorAll('[data-lang]');buttons.forEach(btn=>btn.addEventListener('click',()=>{const lang=btn.dataset.lang;document.body.classList.toggle('lang-ko',lang==='ko');buttons.forEach(b=>b.classList.toggle('active',b===btn));document.documentElement.lang=lang==='ko'?'ko':'en';}));</script>
+<script>
+(function(){
+  const root=document.getElementById('photo-gallery');
+  if(!root)return;
+  const slides=[...root.querySelectorAll('.gallery-slide')];
+  const thumbs=[...root.querySelectorAll('#gallery-thumbs button')];
+  const posEl=document.getElementById('gallery-pos');
+  let index=1;
+  const total=slides.length;
+  function ensureSrc(el){
+    if(!el)return;
+    const img=el.tagName==='IMG'?el:el.querySelector('img');
+    if(img && !img.getAttribute('src') && img.dataset.src){img.src=img.dataset.src;}
+  }
+  function show(n){
+    if(n<1)n=total;
+    if(n>total)n=1;
+    index=n;
+    slides.forEach((s,i)=>{
+      const on=i===index-1;
+      s.classList.toggle('is-active',on);
+      if(on) ensureSrc(s);
+    });
+    thumbs.forEach((b,i)=>{
+      const on=i===index-1;
+      if(on){b.setAttribute('aria-current','true');ensureSrc(b);}
+      else b.removeAttribute('aria-current');
+    });
+    if(posEl)posEl.textContent=String(index);
+    const curThumb=thumbs[index-1];
+    if(curThumb)curThumb.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+    ensureSrc(slides[index%total]);
+    ensureSrc(slides[(index-2+total)%total]);
+    ensureSrc(thumbs[index%total]);
+    ensureSrc(thumbs[(index-2+total)%total]);
+  }
+  root.querySelectorAll('.gallery-nav').forEach(btn=>{
+    btn.addEventListener('click',()=>show(index+Number(btn.dataset.dir)));
+  });
+  thumbs.forEach(btn=>btn.addEventListener('click',()=>show(Number(btn.dataset.goto))));
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    const tag=(e.target&&e.target.tagName)||'';
+    if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT')return;
+    const rect=root.getBoundingClientRect();
+    const inView=root.matches(':hover')||root.contains(document.activeElement)||(rect.top<window.innerHeight&&rect.bottom>0);
+    if(!inView)return;
+    e.preventDefault();
+    show(index+(e.key==='ArrowRight'?1:-1));
+  });
+  let startX=null;
+  const stage=document.getElementById('gallery-stage');
+  stage.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;},{passive:true});
+  stage.addEventListener('touchend',e=>{
+    if(startX==null)return;
+    const dx=e.changedTouches[0].clientX-startX;
+    startX=null;
+    if(Math.abs(dx)<40)return;
+    show(index+(dx<0?1:-1));
+  },{passive:true});
+  show(1);
+})();
+
+</script>
+
 </body>
 </html>
