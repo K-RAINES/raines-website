@@ -95,8 +95,15 @@
 .beat-video.portrait{width:100%;max-width:420px;margin:0 auto}
 .event-video{width:100%;height:auto;display:block;border-radius:18px;background:#16182a;box-shadow:var(--shadow)}
 .beat-video figcaption{margin:.55rem 2px 0;color:var(--muted);font-size:.86rem}
-.tour-note{width:min(1120px,calc(100% - 36px));margin:-24px auto 64px;color:var(--muted);font-size:.98rem}
-.tour-note p{margin:0}
+#tours{padding-top:58px;padding-bottom:48px;scroll-margin-top:72px}
+#tours > .section-head{width:min(1120px,calc(100% - 36px));margin:0 auto 28px}
+#tours .section-head h2{font-size:clamp(1.85rem,3.4vw,3.1rem);line-height:1.05}
+.tour-photos{width:min(1360px,calc(100vw - 24px));margin:28px auto 0;position:relative;left:50%;transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tour-photos figure{margin:0}
+.tour-photos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:14px;box-shadow:0 10px 28px rgba(75,0,130,.10);background:#fff}
+.tour-photos .portrait img{object-position:center 28%}
+.tour-photos figcaption{margin:.4rem 2px 0;color:var(--muted);font-size:.8rem}
+@media(max-width:900px){.tour-photos{grid-template-columns:1fr 1fr;gap:12px}}
 @media(max-width:900px){
   .beat-body,.beat-body.has-video{grid-template-columns:1fr}
   .beat-video.portrait{max-width:320px}
@@ -109,7 +116,7 @@
 </style>
 </head>
 <body>
-<nav class="topbar" aria-label="Page navigation"><div class="wrap"><div class="brand"><a href="index.html" style="text-decoration:none;color:inherit;">K-RAINES</a></div><div class="navlinks en"><a href="#evening">The evening</a><a href="#talks">Talks</a><a href="#partnership">Partnership</a><a href="#gallery">Photos</a><a href="#resources">Materials</a></div><div class="navlinks ko"><a href="#evening">행사</a><a href="#talks">강연</a><a href="#partnership">협약</a><a href="#gallery">사진</a><a href="#resources">자료</a></div><div class="lang-toggle" aria-label="Language toggle"><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="ko">KR</button></div></div></nav>
+<nav class="topbar" aria-label="Page navigation"><div class="wrap"><div class="brand"><a href="index.html" style="text-decoration:none;color:inherit;">K-RAINES</a></div><div class="navlinks en"><a href="#evening">The evening</a><a href="#talks">Talks</a><a href="#partnership">Partnership</a><a href="#tours">Tours</a><a href="#gallery">Photos</a><a href="#resources">Materials</a></div><div class="navlinks ko"><a href="#evening">행사</a><a href="#talks">강연</a><a href="#partnership">협약</a><a href="#tours">견학</a><a href="#gallery">사진</a><a href="#resources">자료</a></div><div class="lang-toggle" aria-label="Language toggle"><button type="button" class="active" data-lang="en">EN</button><button type="button" data-lang="ko">KR</button></div></div></nav>
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
@@ -318,8 +325,46 @@
     </div>
   </article>
 
-  <p class="tour-note en">In the days around the forum, the visiting delegation also toured Boston-area robotics labs and companies.</p>
-  <p class="tour-note ko">포럼을 전후해 방문단은 보스턴 지역의 로보틱스 연구실과 기업을 견학했습니다.</p>
+</section>
+
+<section id="tours">
+  <div class="section-head">
+    <h2 class="en">Lab and company tours</h2>
+    <h2 class="ko">랩·기업 견학</h2>
+    <p class="lead en">Around the forum, on November 16–17, the visiting delegation toured Boston-area robotics labs and companies, including labs at MIT and, on the morning of the forum, Pickle Robot.</p>
+    <p class="lead en">We are deeply grateful to our tour hosts, who generously gave their time to welcome the delegation, walk everyone through their work, and answer questions with real openness. Seeing the research and systems up close, and hearing the people behind them explain it, was a highlight of the visit.</p>
+    <p class="lead ko">포럼을 전후한 11월 16–17일, 방문단은 MIT 연구실과 포럼 당일 오전 Pickle Robot 등 보스턴 지역의 로보틱스 연구실과 기업을 견학했습니다.</p>
+    <p class="lead ko">바쁘신 중에도 귀한 시간을 내어 방문단을 반갑게 맞아 주시고, 연구와 기술을 직접 보여 주시며 자세히 설명해 주신 견학 호스트 여러분께 깊이 감사드립니다. 현장에서 직접 보고 들은 경험은 이번 방문의 가장 뜻깊은 순간 중 하나였습니다.</p>
+  </div>
+  <div class="beat-visual">
+    <figure>
+      <img src="assets/event_111726_forum/06_tours.jpg" alt="Collage of MIT lab visits and a visit to Pickle Robot">
+      <figcaption class="en">MIT lab visits, including Prof. Sangbae Kim’s lab, and a visit to Pickle Robot on November 17.</figcaption>
+      <figcaption class="ko">MIT 랩 방문(김상배 교수 연구실 포함)과 11월 17일 Pickle Robot 방문.</figcaption>
+    </figure>
+  </div>
+  <div class="tour-photos">
+    <figure>
+      <img src="assets/event_111726_forum/tours/mit_group.jpg" alt="Visiting delegation group photograph at MIT">
+      <figcaption class="en">Group photograph at MIT.</figcaption>
+      <figcaption class="ko">MIT에서 함께 찍은 단체 사진.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/event_111726_forum/tours/sangbae_lab.jpg" alt="Visiting delegation in Prof. Sangbae Kim’s lab at MIT">
+      <figcaption class="en">Prof. Sangbae Kim’s lab at MIT.</figcaption>
+      <figcaption class="ko">MIT 김상배 교수 연구실 방문.</figcaption>
+    </figure>
+    <figure class="portrait">
+      <img src="assets/event_111726_forum/tours/pickle_group.jpg" alt="Visiting delegation group photograph at Pickle Robot">
+      <figcaption class="en">Group photograph at Pickle Robot, November 17.</figcaption>
+      <figcaption class="ko">11월 17일 Pickle Robot에서 함께 찍은 단체 사진.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/event_111726_forum/tours/pickle_floor.jpg" alt="Visiting delegation on the Pickle Robot warehouse floor">
+      <figcaption class="en">The warehouse floor at Pickle Robot.</figcaption>
+      <figcaption class="ko">Pickle Robot 창고 현장.</figcaption>
+    </figure>
+  </div>
 </section>
 
 
